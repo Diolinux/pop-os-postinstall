@@ -20,9 +20,9 @@ URL_INSYNC="https://d2t3ff60b2tol4.cloudfront.net/builds/insync_3.7.2.50318-impi
 URL_SYNOLOGY_DRIVE="https://global.download.synology.com/download/Utility/SynologyDriveClient/3.0.3-12689/Ubuntu/Installer/x86_64/synology-drive-client-12689.x86_64.deb"
 URL_WINFF_CONFIG="1d4axPEtdtaxVh6Aiw3m1mkuqhh9RfPRl"
 URL_RESOLVE_CONFIG="1Uq2cv_C2UOznqvXa7AA6HRg4p49lWcMY"
-URL_RESOLVE_DATABASE="URL DE DOWNLOAD DE PREFERÊNCIA"
+URL_RESOLVE_DATABASE="URL_DE_PREFERENCIA"
 URL_PHOTOGIMP="https://github.com/Diolinux/PhotoGIMP/releases/download/1.0/PhotoGIMP.by.Diolinux.v2020.for.Flatpak.zip"
-URL_OBS_STUDIO_CONFIG="URL DE DOWNLOAD DE PREFERÊNCIA"
+URL_OBS_STUDIO_CONFIG="URL_DE_PREFERENCIA"
 URL_ELECTRUM_APPIMAGE="https://download.electrum.org/4.1.5/electrum-4.1.5-x86_64.AppImage"
 
 ##DIRETÓRIOS E ARQUIVOS
@@ -64,8 +64,11 @@ else
 fi
 # ------------------------------------------------------------------------------ #
 ## Removendo travas eventuais do apt ##
-sudo rm /var/lib/dpkg/lock-frontend
+travas_apt(){
+  sudo rm /var/lib/dpkg/lock-frontend
 sudo rm /var/cache/apt/archives/lock
+}
+travas_apt
 
 ## Adicionando/Confirmando arquitetura de 32 bits ##
 sudo dpkg --add-architecture i386
@@ -135,6 +138,8 @@ sudo dpkg -i $DIRETORIO_DOWNLOADS/*.deb
 
 # Instalar programas no apt
 echo -e "${VERDE}[INFO] - Instalando pacotes apt do repositório${SEM_COR}"
+
+travas_apt
 
 for nome_do_programa in ${PROGRAMAS_PARA_INSTALAR[@]}; do
   if ! dpkg -l | grep -q $nome_do_programa; then # Só instala se já não estiver instalado

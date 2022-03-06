@@ -81,7 +81,7 @@ sudo apt update -y
 
 PROGRAMAS_PARA_INSTALAR=(
   snapd
-  steam-Installer
+  steam-installer
   steam-devices
   winff
   virtualbox

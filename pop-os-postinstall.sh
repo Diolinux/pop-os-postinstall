@@ -90,6 +90,7 @@ PROGRAMAS_PARA_INSTALAR=(
   folder-color
   git
   wget
+  ubuntu-restricted-extras
  
 )
 
@@ -217,5 +218,3 @@ system_cleam
 ## finalização
 
   echo -e "${VERDE}[INFO] - Script finalizado, instalação concluída! :)${SEM_COR}"
-
-

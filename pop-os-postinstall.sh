@@ -213,7 +213,7 @@ install_flatpaks
 install_snaps
 extra_config
 apt_update
-system_cleam
+system_clean
 
 ## finalização
 

@@ -4,5 +4,7 @@ Script de post install do Pop!_OS
 
 ## Como usar
 
-Baixe o script, verifique as persmissões de uso e execute:<br>
-``./pop-os-postinstall.sh``
+Apenas execute o comando abaixo no terminal
+```shell
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/Diolinux/pop-os-postinstall/main/pop-os-postinstall.sh)"
+```

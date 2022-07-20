@@ -92,6 +92,7 @@ PROGRAMAS_PARA_INSTALAR=(
   git
   wget
   ubuntu-restricted-extras
+  v4l2loopback-utils
  
 )
 
